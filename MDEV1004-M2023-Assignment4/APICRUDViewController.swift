@@ -143,7 +143,7 @@ class APICRUDViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    // New for ICE8
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         performSegue(withIdentifier: "AddEditSegue", sender: indexPath)
@@ -225,7 +225,7 @@ class APICRUDViewController: UIViewController, UITableViewDelegate, UITableViewD
     {
         let movie = movies[indexPath.row]
         
-        // New for ICE9
+        
         guard let authToken = UserDefaults.standard.string(forKey: "AuthToken") else
         {
                     print("AuthToken not available.")
@@ -239,7 +239,7 @@ class APICRUDViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
-        // New for ICE9
+   
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
 
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
@@ -257,7 +257,7 @@ class APICRUDViewController: UIViewController, UITableViewDelegate, UITableViewD
         task.resume()
     }
     
-    // New for ICE 9
+   
     @IBAction func logoutButtonPressed(_ sender: UIButton)
     {
         // Remove the token from UserDefaults or local storage to indicate logout

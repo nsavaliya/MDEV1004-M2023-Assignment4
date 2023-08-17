@@ -100,7 +100,7 @@ class APILoginViewController: UIViewController
         performSegue(withIdentifier: "RegisterSegue", sender: nil)
     }
     
-    // New for ICE9
+  
     @IBAction func unwindToLoginViewController(_ unwindSegue: UIStoryboardSegue)
     {
         // This is the action method for the unwind segue.
